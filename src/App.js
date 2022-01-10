@@ -110,6 +110,15 @@ const sliderMarks = [
 
 class Asterisk extends React.Component {
 
+	// Add body classes upon component mount
+  	componentDidMount() {
+
+		const body = document.body;
+		body.classList.add('kmpAppLoaded');
+		body.classList.add('kmpAppDidMount');
+
+  	}
+
 	render() {
 
 		return (
@@ -343,7 +352,7 @@ export default function HorizontalLinearStepper() {
 	if ( true === test_withCookies && true === onLocalhost ) {
 
 		if ( undefined === Cookies.get('kmp-ck-plannerUsed') )
-			Cookies.set('kmp-ck-plannerUsed', 0, { expires: ckExp });	
+			Cookies.set('kmp-ck-plannerUsed', 0, { expires: ckExp, sameSite: 'strict' });	
 
 	}
 
@@ -364,6 +373,8 @@ export default function HorizontalLinearStepper() {
 	console.log( restrictNum === parseInt( Cookies.get('kmp-ck-plannerUsed') ) );
 	console.log( ckExpMins );
 
+	const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+
 	// Add body classes upon component mount
 	useEffect(() => {
 
@@ -371,9 +382,7 @@ export default function HorizontalLinearStepper() {
 		body.classList.add('kmpAppLoaded');
 		body.classList.add('kmpAppDidMount');
 
-  	});
-
-	const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+  	});	
 
 	return (
 
@@ -594,7 +603,8 @@ export default function HorizontalLinearStepper() {
 							const x = parseInt( Cookies.get('kmp-ck-plannerUsed') );
 
 							Cookies.remove('kmp-ck-plannerUsed');
-							Cookies.set('kmp-ck-plannerUsed', x + 1, { expires: ckExp });	
+							Cookies.set('kmp-ck-plannerUsed', x + 1, { expires: ckExp, sameSite: 'strict' });	
+							// alert( Cookies.get('kmp-ck-plannerUsed') );
 						
 						}
 
@@ -635,7 +645,8 @@ export default function HorizontalLinearStepper() {
 									sensitivitiesOther: values.kmpFieldSensitivitiesOther,
 									mealComplexity: values.kmpFieldMealComplexity,
 									yourGoals: values.kmpFieldYourGoals,
-								}
+								},
+								bubbles: false
 							}
 						);
 
@@ -658,6 +669,7 @@ export default function HorizontalLinearStepper() {
 
 						<Form
 							noValidate
+							autocomplete="on"
 						>
 
 {/**
@@ -1819,7 +1831,6 @@ export default function HorizontalLinearStepper() {
 								  : props.isSubmitting }
 					variant="contained"
 					color="primary"
-					type="submit"
 					className={(
 									( 	
 										false === isDevMode &&
