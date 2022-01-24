@@ -669,7 +669,7 @@ export default function HorizontalLinearStepper() {
 
 						<Form
 							noValidate
-							autocomplete="on"
+							autoComplete="on"
 						>
 
 {/**
@@ -1786,7 +1786,7 @@ export default function HorizontalLinearStepper() {
 						}}
 					>
 
-						<label for="kmpFieldAgreement">I agree to the Ketogevity <a href="https://ketogenic.com/terms/" rel="noreferrer" target="_blank">Terms & Conditions<i class="far fa-external-link" aria-hidden="true"></i></a>
+						<label htmlFor="kmpFieldAgreement">I agree to the Ketogevity <a href="https://ketogenic.com/terms/" rel="noreferrer" target="_blank">Terms & Conditions<i className="far fa-external-link" aria-hidden="true"></i></a>
 						</label>
 
 						<p id="kmp-errorwrap--agreement"><ErrorMessage name="kmpFieldAgreement" /></p>
@@ -1809,7 +1809,7 @@ export default function HorizontalLinearStepper() {
 		  	>
 		    										  	
 			  	<Button
-					startIcon={props.isSubmitting ? <CircularProgress size="1.25rem" thickness="8" color="inherit" /> : null}
+					startIcon={props.isSubmitting ? <CircularProgress size="1.25rem" thickness="8" color="inherit" /> : null} 
 					disabled={ (
 									( 	
 										false === isDevMode &&
@@ -1827,7 +1827,7 @@ export default function HorizontalLinearStepper() {
 										( true === withCookies && false === isPlatinumMember ) &&
 										( restrictNum === parseInt( Cookies.get('kmp-ck-plannerUsed') ) )
 									)
-								) ? 'disabled' 
+								) ? true 
 								  : props.isSubmitting }
 					variant="contained"
 					color="primary"
