@@ -48,6 +48,23 @@
 
 #kmp-errorwrap--restricted {
 	margin-top: -15px;
+
+	margin-top: -15px;
+	background: #ff4c30!important;
+	color: #eee!important;
+	font-size: .92rem;
+	font-weight: 500!important;
+	padding: 0.1rem 1rem;
+	border-radius: 5px;
+	text-align: center!important;	
+}
+
+#ketogenic-meal-planner #kmp-errorwrap--restricted a,
+#ketogenic-meal-planner #kmp-errorwrap--restricted a:hover,
+#ketogenic-meal-planner #kmp-errorwrap--restricted a:focus {
+	color: #fff!important;
+	font-size: 1rem;
+	font-weight: 700!important;	
 }
 
 #kmp-errorwrap--restricted a {
@@ -633,13 +650,93 @@ legend.MuiFormLabel-root {
 	font-size: 13px!important;
 	color: #aaa!important;
 
-	margin: 5px 0 35px!important;
-	border-bottom: 2px solid #ddd!important;
 	text-align: left!important;
-	padding: 0 0 15px!important;
+	border: none!important;
+	margin: 0;
+	padding: 0;
 
 	-ms-word-break: break-word!important;
 		word-break: break-word!important;	
+}
+
+#ketogenic-meal-planner .kmpSublabelWrap__calorieSlider {
+	margin: 10px 0 35px!important;
+	border-bottom: 2px solid #ddd!important;
+	text-align: left!important;
+	padding: 0 0 15px!important;
+}
+
+#ketogenic-meal-planner .kmpSublabelWrap__calorieSlider > :first-child {
+	margin-right: 1.5rem;
+	padding-right: 1.5rem!important;
+	border-right: #eee solid 1px;
+}
+
+#ketogenic-meal-planner .kmpSublabelWrap__calorieSlider .cta {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	position: relative;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	outline: 0;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	vertical-align: middle;
+	font-family: "Roboto","Helvetica","Arial",sans-serif;
+	min-width: 64px;
+
+
+	background: #2fafbe!important;
+	transition: all .15s ease-in-out!important;
+	border: none!important;
+	width: 100%!important;
+	height: 53px!important;
+	padding: 0 15px!important;
+	line-height: 18px!important;
+	border-radius: 5px!important;
+	color: #fff!important;
+	letter-spacing: .03em!important;
+	font-weight: 800!important;
+	font-size: 13px!important;
+	text-align: center!important;
+	text-transform: uppercase!important;
+	cursor: pointer!important;
+	margin: 10px 0 20px!important;
+	box-shadow: none!important;
+	transition: all .2s ease-in;	
+	text-decoration: none;
+
+	width: 240px!important;	
+}
+
+#ketogenic-meal-planner .kmpSublabelWrap__calorieSlider .cta:hover,
+#ketogenic-meal-planner .kmpSublabelWrap__calorieSlider .cta:focus {
+	background: #0c8896!important;
+}
+
+@media ( max-width: 768px ) {
+
+	#ketogenic-meal-planner .kmpSublabelWrap__calorieSlider,
+	#ketogenic-meal-planner .kmpSublabelWrap__calorieSlider > * {
+		display: block!important;
+		margin-right: 0!important;
+		padding-right: 0!important;
+		border-right: none!important;
+	}
+
 }
 
 /* Step 3 

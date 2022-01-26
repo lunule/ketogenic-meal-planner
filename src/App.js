@@ -1032,7 +1032,44 @@ export default function HorizontalLinearStepper() {
 			
 				<Typography id="kmp-label--calorie-slider" gutterBottom>Select how many calories you’d like your interactive sliding meal plan to follow:</Typography>    
 
-				<Typography id="kmp-sublabel--calorie-slider" gutterBottom>Select the calorie content that is closest to your regimented intake or that is closest to the recommendation that our <a href="/calculator/" target="_blank">Keto Calculator</a> provides. Round down if calorie content is in middle (i.e. if your desired intake is 1732 calories, you would choose the 1700 calorie option).</Typography>
+				<Box
+					className={'kmpSublabelWrap__calorieSlider kmpSublabelWrap'}
+					sx={{
+						display: 'flex',
+						flexWrap: 'nowrap',
+						justifyContent: 'flex-start',
+						alignItems: 'stretch',
+						alignContent: 'flex-start',
+					}}
+				>
+
+					<Box
+						className={'checkboxWrap'}
+						sx={{
+							flexGrow: 1,
+						}}
+					>
+
+						<Typography id="kmp-sublabel--calorie-slider" gutterBottom>Select the calorie content that is closest to your regimented intake or that is closest to the recommendation that our <a href="/calculator/" target="_blank">Keto Calculator</a> provides. Round down if calorie content is in middle (i.e. if your desired intake is 1732 calories, you would choose the 1700 calorie option).</Typography>
+
+					</Box>
+
+					<Box
+						className={'checkboxWrap'}
+						sx={{
+							flexGrow: 0,
+						}}
+					>
+
+						<a 
+							href="/calculator/"
+							target="_blank"
+							className={'cta'}
+						>Need help? Use our<br />Keto Calculator</a>
+
+					</Box>					
+
+				</Box>
 
 				<Box 
 					sx={{px: 5, pt: 4, pb: 6}}
