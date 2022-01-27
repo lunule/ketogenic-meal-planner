@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/css/main.c97a1bf4.chunk.css",
-    "main.js": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/js/main.c1262ed9.chunk.js",
-    "main.js.map": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/js/main.c1262ed9.chunk.js.map",
+    "main.css": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/css/main.7a91727b.chunk.css",
+    "main.js": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/js/main.8c46fa3d.chunk.js",
+    "main.js.map": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/js/main.8c46fa3d.chunk.js.map",
     "runtime-main.js": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/js/runtime-main.fb62b3c1.js",
     "runtime-main.js.map": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/js/runtime-main.fb62b3c1.js.map",
     "static/js/2.da454e28.chunk.js": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/js/2.da454e28.chunk.js",
     "static/js/2.da454e28.chunk.js.map": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/js/2.da454e28.chunk.js.map",
     "index.html": "/wp-content/plugins/ketogenic-meal-planner/public/app/index.html",
-    "static/css/main.c97a1bf4.chunk.css.map": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/css/main.c97a1bf4.chunk.css.map",
+    "static/css/main.7a91727b.chunk.css.map": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/css/main.7a91727b.chunk.css.map",
     "static/js/2.da454e28.chunk.js.LICENSE.txt": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/js/2.da454e28.chunk.js.LICENSE.txt",
     "static/media/App.css": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/media/vegetarian-blue-256.593631a3.svg",
     "static/media/kmp-deco-min.86c66575.jpg": "/wp-content/plugins/ketogenic-meal-planner/public/app/static/media/kmp-deco-min.86c66575.jpg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.fb62b3c1.js",
     "static/js/2.da454e28.chunk.js",
-    "static/css/main.c97a1bf4.chunk.css",
-    "static/js/main.c1262ed9.chunk.js"
+    "static/css/main.7a91727b.chunk.css",
+    "static/js/main.8c46fa3d.chunk.js"
   ]
 }
