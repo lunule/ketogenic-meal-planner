@@ -1115,7 +1115,7 @@ export default function HorizontalLinearStepper() {
 			  			component="legend" 
 			  			required
 			  		>
-			  			Do you practice intermittent fasting?
+			  			Do you practice intermittent fasting? <span class="required-asterisk">*</span>
 						<p id="kmp-errorwrap--fasting"><ErrorMessage name="kmpFieldFasting" /></p>	
 			  		</FormLabel>										  		
 
@@ -1181,7 +1181,7 @@ export default function HorizontalLinearStepper() {
 			  			component="legend" 
 			  			required
 			  		>
-			  			How many full meals do you prefer to eat per day?
+			  			How many full meals do you prefer to eat per day? <span class="required-asterisk">*</span>
 						<p id="kmp-errorwrap--meals-number"><ErrorMessage name="kmpFieldMealsNumber" /></p>	
 			  		</FormLabel>
 
@@ -1280,7 +1280,7 @@ export default function HorizontalLinearStepper() {
 					  			component="legend" 
 					  			required
 					  		>
-					  			Do you want your meal plan to include a snack or a dessert?
+					  			Do you want your meal plan to include a snack or a dessert? <span class="required-asterisk">*</span>
 								<p id="kmp-errorwrap--add-dessert"><ErrorMessage name="kmpFieldAddDessert" /></p>	
 					  		</FormLabel>							
 
@@ -1363,7 +1363,7 @@ export default function HorizontalLinearStepper() {
 			  			component="legend" 
 			  			required
 			  		>
-			  			Do you have any dietary preferences?
+			  			Do you have any dietary preferences? <span class="required-asterisk">*</span>
 						<p id="kmp-errorwrap--diet-type-1"><ErrorMessage name="kmpFieldDietType1" /></p>	
 			  		</FormLabel>		  		
 
@@ -1544,7 +1544,7 @@ export default function HorizontalLinearStepper() {
 			  			component="legend" 
 			  			required
 			  		>
-			  			Do you have any food sensitivities or allergies?
+			  			Do you have any food sensitivities or allergies? <span class="required-asterisk">*</span>
 						<p id="kmp-errorwrap--sensitivities"><ErrorMessage name="kmpFieldSensitivities" /></p>	
 			  		</FormLabel>							
 
@@ -1679,7 +1679,7 @@ export default function HorizontalLinearStepper() {
 			  			component="legend" 
 			  			required
 			  		>
-			  			Do you prefer beginner-friendly, simple meals or more complex recipes?
+			  			Do you prefer beginner-friendly, simple meals or more complex recipes? <span class="required-asterisk">*</span>
 						<p id="kmp-errorwrap--meal-complexity"><ErrorMessage name="kmpFieldMealComplexity" /></p>	
 			  		</FormLabel>	
 
@@ -1844,6 +1844,22 @@ export default function HorizontalLinearStepper() {
 				className="buttonWrapBox" 
 		  		sx={{ pt: 2, color: 'white' }}
 		  	>
+
+				{ ( 
+					props.errors.kmpFieldFasting 			||
+					props.errors.kmpFieldMealsNumber 		||
+					props.errors.kmpFieldAddDessert 		||
+					props.errors.kmpFieldDietType1 			||
+					props.errors.kmpFieldDietType2 			||
+					props.errors.kmpFieldSensitivities  	||
+					props.errors.kmpFieldMealComplexity					
+				  )
+					? (					
+
+						<p className="required-reminder">please answer all required questions.</p>
+
+					) : null
+				} 		  	
 		    										  	
 			  	<Button
 					startIcon={props.isSubmitting ? <CircularProgress size="1.25rem" thickness="8" color="inherit" /> : null} 
