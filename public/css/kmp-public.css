@@ -1,0 +1,1437 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+
+/* Utility Classes
+================================================================================================ */
+
+.kmp-flex-container {
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-ms-flex-direction: row;
+	flex-direction: row;
+	-webkit-flex-wrap: nowrap;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-webkit-align-content: flex-start;
+	-ms-flex-line-pack: start;
+	align-content: flex-start;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+}
+
+.kmp-flex-container--wrap {
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.kmp-flex-container--leftalign {
+	-webkit-justify-content: flex-start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+}
+
+.kmp-flex-container--rightalign {
+	-webkit-justify-content: flex-end;
+	-ms-flex-pack: end;
+	justify-content: flex-end;
+}
+
+.kmp-flex-item {
+	-webkit-order: 0;
+	-ms-flex-order: 0;
+	order: 0;
+	-webkit-flex: 0 1 auto;
+	-ms-flex: 0 1 auto;
+	flex: 0 1 auto;
+	-webkit-align-self: auto;
+	-ms-flex-item-align: auto;
+	align-self: auto;
+}
+
+.kmp-flex-item--fullwidth {
+	-webkit-flex: 0 1 100%;
+	-ms-flex: 0 1 100%;
+	flex: 0 1 100%;
+}
+
+/* App background
+================================================================================================ */
+
+.kmp-app-page #keto-content {
+	position: relative;
+	padding-top: 50px;
+}
+
+.app-background {
+	background-color: transparent;
+	background-image: linear-gradient(130deg, #2EA3B1 0%, #14F3FF 89%);
+	transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+	margin-top: -50px;
+	margin-bottom: 0px;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 750px;
+}
+
+#kmpAllRoot {
+	position: relative;
+	z-index: 2;
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.app-background-overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 0.15;
+	transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+.app-background-shape {
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	line-height: 0;
+	direction: ltr;
+}
+
+.app-background-shape-bottom {
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+	bottom: -1px;
+}
+
+.app-background svg {
+	width: calc(260% + 1.3px);
+	height: 120px;
+	-webkit-transform: translateX(-50%) rotateY(180deg);
+	-ms-transform: translateX(-50%) rotateY(180deg);
+	transform: translateX(-50%) rotateY(180deg);
+	z-index: -1;
+	display: block;
+	position: relative;
+	left: 50%;
+}
+
+.app-background-shape-fill {
+	fill: #fff;
+	-webkit-transform-origin: center;
+	-ms-transform-origin: center;
+	transform-origin: center;
+	-webkit-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+
+/* General + Form General
+================================================================================================ */
+
+.kmp-app-page #keto-content {
+	display: grid;
+	min-height: 100vh!important;
+}
+
+.kmp-all-wrap {
+	padding: 0 40px 40px;
+	box-sizing: border-box;
+	width: 100%!important;
+	margin: 50px auto!important;
+	border-radius: 15px!important;
+	padding: 40px!important;
+	max-width: 880px!important;
+	box-shadow: 0px 0px 80px 0px rgb(0, 0, 0, .1)!important;
+	background-color: rgba(255, 255, 255, 1)!important;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+
+#keto-content .kmp-all-wrap a {
+	-ms-word-break: break-word!important;
+	word-break: break-word!important;
+}
+
+.kmpAppBuilt .kmp-all-wrap {
+	opacity: 1;
+	visibility: visible;
+}
+
+#kmpAppRootBox {
+	box-shadow: none;
+	margin: 0 auto!important;
+	padding: 0!important;
+	max-width: unset!important;
+}
+
+#ketogenic-meal-planner {
+	width: 100%;
+	margin: 0;
+	display: block;
+}
+
+#ketogenic-meal-planner * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.kmp-title {
+	font-family: "Roboto Condensed";
+	font-size: 2.25rem;
+	font-weight: 700;
+}
+
+.kmp-description-text,
+.kmp-form fieldset,
+.kmp-form-control-container {
+	margin-top: 2.5rem;
+	padding-top: 2.25rem;
+	border-top: 1px solid rgb(221, 221, 221);
+}
+
+.kmp-description-text,
+.kmp-form fieldset {
+	display: block;
+}
+
+#ketogenic-meal-planner textarea {
+	box-shadow: none;
+}
+
+.MuiGrid-root > button:first-child:last-child {
+
+}
+
+.MuiPaper-root {
+	box-shadow: none!important;
+}
+
+/* Backstep
+----------- */
+
+.kmp-backstep-wrap {
+	display: none;
+	margin-top: -45px;
+}
+
+.kmp-backstep {
+	padding: 20px 0 42px;
+}
+
+.kmp-backstep p {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.kmp-backstep p:first-child {
+	font: normal 500 14px/19px Roboto, Arial, Helvetica, sans-serif;
+	color: #ccc;
+}
+
+.kmp-backstep p:last-child {
+	font: normal 400 16px/19px Roboto, Arial, Helvetica, sans-serif;
+}
+
+.kmp-backstep p:last-child a {
+	color: #e6b081;
+	text-decoration: underline;
+	-webkit-transition: color .2s ease-in;
+	-o-transition: color .2s ease-in;
+	transition: color .2s ease-in;
+}
+
+/* Header
+--------- */
+
+.kmp-header {
+	text-align: center;
+	margin: 20px 0 4.5rem;
+}
+
+.kmp-header h2 {
+	line-height: 1em;
+}
+
+/* Form
+------- */
+
+
+/* QUERY TESTING
+================================================================================================ */
+
+.kmp-testing-table,
+.kmp-testing-table td,
+.kmp-testing-table th {
+	border: #ddd solid 1px;
+}
+
+.kmp-testing-table {
+	border-collapse: collapse;
+	max-width: 100%;
+	table-layout: fixed;
+	width: 100%;
+	font-size: 12px;
+	word-break: break-all;
+}
+
+.kmp-testing-table td,
+.kmp-testing-table th {
+	padding: 3px 7px;
+}
+
+.kmp-testing-table td,
+.kmp-testing-table th {
+	text-align: left;
+}
+
+.kmp-testing-table th {
+	font-weight: 700;
+}
+
+.kmp-sql-testing__results {
+	width: 100%;
+	min-height: 200px;
+	background: #f6f6f6;
+	border-radius: 15px;
+	overflow-y: scroll;
+}
+
+.kstr-table {
+	font-size: .84em;
+	table-layout: fixed;
+	width: 635px;
+}
+
+.kstr-table td,
+.kstr-table th {
+	text-align: center;
+}
+
+.kstr-table th {
+	-ms-word-break: break-all;
+	word-break: break-all;
+}
+
+.kstr-table tr > *:nth-child(1) { width: 64px; text-align: left; }
+.kstr-table tr > *:nth-child(2) { width: 64px; text-align: left; }
+.kstr-table tr > *:nth-child(3) { width: 64px; text-align: left; }
+.kstr-table tr > *:nth-child(4) { width: 75px; text-align: left; }
+.kstr-table tr > *:nth-child(5) { width: 200px; text-align: left; }
+.kstr-table tr > *:nth-child(6) { width: 40px; font-size: 10px; text-align: left; }
+.kstr-table tr > *:nth-child(7) { width: 40px; font-size: 10px; }
+.kstr-table tr > *:nth-child(8) { width: 40px; font-size: 10px; }
+.kstr-table tr > *:nth-child(9) { width: 40px; font-size: 10px; }
+.kstr-table tr > *:nth-child(10) { width: 40px; font-size: 10px; }
+.kstr-table tr > *:nth-child(11) { width: 40px; font-size: 10px; }
+.kstr-table tr > *:nth-child(12) { width: 40px; font-size: 10px; }
+.kstr-table tr > *:nth-child(13) { width: 40px; font-size: 10px; }
+
+.kstr-table .is { background: green; }
+.kstr-table .not { background: red; }
+
+.kstr-table td[class*="-header"] {
+	background: #444;
+	color: #fff;
+}
+
+.kmp-testing-button-container {
+	position: relative;
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
+	margin: 30px 0 10px;
+}
+
+.kmp-testing-button:disabled {
+	cursor: default;
+	position: relative;
+	z-index: 1;
+}
+
+.kmp-testing-button--pseudo {
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+}
+
+.generateMaxReached .kmp-testing-button--pseudo {
+	display: block;
+	z-index: 2;
+}
+
+.kmp-tippy-notice--restricted {
+	text-align: center;
+	margin-bottom: -5px;
+	padding: 3px 15px;
+}
+
+.kmp-tippy-notice--restricted a {
+	color: #2fafbe!important;
+}
+
+.kmp-tippy-notice--restricted a:hover,
+.kmp-tippy-notice--restricted a:focus {
+	color: #0c8896!important;
+}
+
+/* Results
+================================================================================================ */
+
+.kmp-results-wrap {
+	display: none;
+	width: calc( 100% + 80px );
+	margin-left: -40px;
+}
+
+.masonryComplete .kmp-results-wrap {
+	opacity: 1;
+}
+
+.kmp-results {
+	min-height: 300px;
+	border-radius: 10px;
+	margin-top: 50px;
+	-webkit-transition: height .2s ease-in;
+	-o-transition: height .2s ease-in;
+	transition: height .2s ease-in;
+	position: relative;
+}
+
+.kmp-results__list {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f6f6f6+0,ffffff+100 */
+	background: rgb(246,246,246); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(246,246,246,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(246,246,246,1) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	padding: 40px 0 0 40px;
+	-webkit-transition: all .2s ease-in;
+	-o-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+	opacity: 0;
+	height: 300px;
+}
+
+.masonryComplete .kmp-results__list {
+	opacity: 1;
+	height: auto;
+}
+
+.kmp-results__list > ul {
+	padding: 0!important;
+	margin: 0!important;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+
+.kmp-masonry__grid-sizer,
+.kmp-results__list > ul > li {
+	width: calc( 50% - 40px )!important;
+	padding: 0px!important;
+	list-style-type: none!important;
+}
+
+.kmp-results__list > ul > li:not(.kmp-masonry__grid-sizer) {
+	background: #fff!important;
+	margin: 0 0 40px!important;
+	border-radius: 5px!important;
+	overflow: hidden;
+	box-shadow: 0px 5px 6.51px 0.49px rgba(0, 0, 0, 0.05);
+}
+
+.kmp-results__list > ul > li:not(.kmp-masonry__grid-sizer).mealCard--fake {
+	background: transparent!important;
+	box-shadow: none!important;
+}
+
+.mealCard--fake,
+.mealCard--fake div {
+	overflow: visible!important;
+}
+
+.mealCard--fake img {
+	width: 100%;
+	display: block;
+	width: calc(100% + 10px)!important;
+	margin: -1px 0 0 -5px;
+	max-width: unset!important;
+	height: auto;
+}
+
+.notPlatinumMember .kmp-results__list {
+	position: relative;
+}
+
+.kmp-results-restricted-wrap {
+	display: none;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 300px;
+	width: 100%;
+	padding: 0 40px;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+50,ffffff+100&0+0,1+50,1+100 */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+@media ( max-width: 878px ) {
+	.kmp-testing-table {
+		display: none;
+	}
+}
+
+@media ( max-width: 640px ) and ( min-width: 540px ) {
+	.kmp-results-restricted-wrap {
+		height: 1000px;
+	}
+}
+
+@media ( max-width: 539px ) and ( min-width: 380px ) {
+	.kmp-results-restricted-wrap {
+		height: 750px;
+	}
+}
+
+@media ( max-width: 380px ) {
+	.kmp-results-restricted-wrap {
+		height: 600px;
+	}
+}
+
+.kmp-results-restricted {
+	position: relative;
+	transform: translate(-50%, 0);
+	left: 50%;
+	top: 30px;
+}
+
+.kmp-gauges .gauge-block.overall .gauge-title {
+	font-weight: 700;
+	letter-spacing: -.01em;
+}
+
+.kmp-gauges .gauge-block.overall .gauge-title .mo-message {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	color: #222;
+	font: normal 800 23px/35px Inter, sans-serif;
+}
+
+.kmp-gauges .gauge-block.overall .gauge-title .mo-message .fa-lock {
+	color: #2fafbe;
+}
+
+.kmp-gauges .gauge-block.overall .gauge-title .mo-message > div:last-child {
+	margin-top: -6px;
+}
+
+.kmp-gauges .gauge-block.overall .gauge-title .mo-message > div:last-child a {
+	margin-bottom: 10px;
+	color: #2fafbe;
+	font: normal 800 18px/27px Inter, sans-serif;
+}
+
+.masonry-testing {
+	width: calc( 100% + 60px );
+	margin-left: -30px;
+	padding: 40px 0 40px 40px;
+}
+
+.masonry-testing ul,
+.masonry-testing li {
+	list-style-type: none;
+	list-style-position: inside;
+	padding: 0!important;
+	margin: 0!important;
+	display: block;
+}
+
+.masonry-testing ul {
+	width: 100%;
+}
+
+.masonry-testing .kmp-masonry__grid-sizer,
+.masonry-testing .kmp-masonry-item {
+	width: calc( 50% - 40px );
+}
+
+.masonry-testing .kmp-masonry-item {
+	background: #ddd;
+	border-radius: 10px;
+	margin-bottom: 40px!important;
+}
+
+[class*="mealCard-"] > .kmp-flex-container {
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: flex-start;
+	-webkit-align-content: flex-start;
+	-ms-flex-line-pack: start;
+	align-content: flex-start;
+	-webkit-align-items: flex-end;
+	-ms-flex-align: end;
+	align-items: flex-end;
+}
+
+[class*="mealCard-"] > .mealCard__meal.kmp-flex-container,
+.mealCard__meal > .kmp-flex-container {
+	-webkit-align-content: stretch;
+	-ms-flex-line-pack: stretch;
+	align-content: stretch!important;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center!important;
+}
+
+
+
+.mealCard__day,
+.mealCard__calories {
+	height: 31px;
+}
+
+.mealCard__day {
+	background: #e6e6e6;
+	color: #fff;
+	-webkit-flex: 0 1 204px;
+	-ms-flex: 0 1 204px;
+	flex: 0 1 204px;
+	font: normal 700 18px/18px 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .25px;
+	padding: 8px 20px 6px;
+}
+
+.mealCard__calories {
+	background: #eee;
+	color: #14c8e0;
+	-webkit-flex: 0 1 calc( 100% - 204px );
+	-ms-flex: 0 1 calc( 100% - 204px );
+	flex: 0 1 calc( 100% - 204px );
+	text-align: center;
+	font: normal 700 14px/18px 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	padding: 10px 20px 3px;
+}
+
+@media ( max-width: 820px ) and (min-width: 741px) {
+	.mealCard__day {
+		-webkit-flex: 0 1 164px;
+		-ms-flex: 0 1 164px;
+		flex: 0 1 164px;
+	}
+	.mealCard__calories {
+		-webkit-flex: 0 1 calc( 100% - 164px );
+		-ms-flex: 0 1 calc( 100% - 164px );
+		flex: 0 1 calc( 100% - 164px );
+	}
+}
+
+@media ( max-width: 740px ) and (min-width: 641px) {
+	.mealCard__day,
+	.mealCard__calories	 {
+		-webkit-flex: 0 1 50%;
+		-ms-flex: 0 1 50%;
+		flex: 0 1 50%;
+	}
+	.mealCard__calories {
+		padding: 10px 0 3px;
+	}
+}
+
+@media ( max-width: 640px ) {
+	.kmp-masonry__grid-sizer,
+	.kmp-results__list > ul > li {
+		width: calc( 100% - 40px )!important;
+	}
+	.mealCard__day {
+		-webkit-flex: 0 1 calc( 100% - 144px );
+		-ms-flex: 0 1 calc( 100% - 144px );
+		flex: 0 1 calc( 100% - 144px );
+	}
+	.mealCard__calories {
+		-webkit-flex: 0 1 144px;
+		-ms-flex: 0 1 144px;
+		flex: 0 1 144px;
+	}
+}
+
+.mealCard__meal {
+	padding: 18px 20px 21px;
+	position: relative;
+}
+
+.mealCard__meal:not(:last-child):after {
+	content: '';
+	background: #ddd;
+	height: 1px;
+	width: calc( 100% - 40px );
+	bottom: 0;
+	left: 20px;
+	display: block;
+	position: absolute;
+}
+
+.meal__data {
+	-webkit-flex: 0 1 calc( 100% - 64px );
+	-ms-flex: 0 1 calc( 100% - 64px );
+	flex: 0 1 calc( 100% - 64px );
+	padding-right: 10px;
+}
+
+.meal__image {
+	-webkit-flex: 0 1 64px;
+	-ms-flex: 0 1 64px;
+	flex: 0 1 64px;
+}
+
+.no-img .meal__data {
+	-webkit-flex: 0 1 calc( 100% - .1px );
+	-ms-flex: 0 1 calc( 100% - .1px );
+	flex: 0 1 calc( 100% - .1px );
+	padding-right: 0;
+}
+
+.no-img .meal__image {
+	-webkit-flex: 0 1 .1px;
+	-ms-flex: 0 1 .1px;
+	flex: 0 1 .1px;
+}
+
+.meal__image img {
+	width: 64px;
+	border-radius: 50%!important;
+	overflow: hidden;
+}
+
+.meal__type {
+	font: normal 700 15px/19px 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #ccc;
+	text-transform: uppercase;
+	letter-spacing: .25px;
+	margin: 0;
+}
+
+.meal__cal {
+	font: normal 700 12px/13px Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #1ce7fe;
+	text-transform: uppercase;
+	margin: -1px 0 10px;
+}
+
+.meal__name,
+.meal__name a,
+.meal__name a:hover,
+.meal__name a:focus {
+	color: #999999;
+	-ms-word-break: break-word!important;
+	word-break: break-word!important;
+}
+
+.meal__name {
+	font: normal 700 20px/21px Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0 0 8px;
+	position: relative;
+	display: inline-block;
+	padding: 0;
+	margin: 0 20px 10px 0;
+	-webkit-box-sizing: content-box!important;
+	-moz-box-sizing: content-box!important;
+	box-sizing: content-box!important;
+}
+
+.meal__name div {
+	display: inline-block;
+	margin: 0 7px 0 0;
+	-webkit-transform: translateY(1px);
+	-ms-transform: translateY(1px);
+	transform: translateY(1px);
+	color: #ddd;
+}
+
+body > [id*="tippy-"] {
+	z-index: 99999999!important;
+}
+
+.kmp-tippy-simplecontent {
+	font-size: 12px;
+	padding: 0 5px!important;
+	margin: 0 0 -5px!important;
+}
+
+.meal__desc {
+	font: normal 400 14px/15px Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #aaaaaa;
+	margin: 0;
+}
+
+.meal__data--submeal {
+	margin-bottom: 10px;
+}
+
+.meal__error {
+	background: #c1666b;
+	color: #fff;
+	padding: 7px 12px 6px;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.tippy-content {
+	padding: 5px 5px 10px!important;
+}
+
+.meal__data .tippy-content {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+	overflow: hidden;
+}
+
+.tippy__meal-stats {
+	table-layout: fixed;
+	width: 282px;
+	margin: 10px;
+	display: block;
+	margin: auto 5px;
+	border: none;
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.tippy__meal-stats,
+.tippy__meal-stats thead,
+.tippy__meal-stats tr,
+.tippy__meal-stats th,
+.tippy__meal-stats tbody,
+.tippy__meal-stats td,
+.tippy__meal-stats tfoot {
+	border: none;
+}
+
+.tippy__meal-stats td {
+	border-bottom: #eee solid 1px;
+	padding: 4px 7px 3px;
+	width: 141px;
+}
+
+.tippy__meal-stats td {
+	background: #fafafa;
+}
+
+.tippy__meal-stats tr:last-child td {
+	border-bottom: none;
+}
+
+.tippy__meal-stats tr:nth-child(2n) td {
+	background: #f6f6f6;
+}
+
+.tippy__meal-stats td:first-child {
+	font-weight: 500;
+	font-size: .9em;
+}
+
+.tms-protein td     { color: #5cb4cd; }
+.tms-fat td         { color: #8dddad; }
+.tms-netcarbs td    { color: #f66d69; }
+
+.ct-series-a .ct-slice-pie      { fill: #5cb4cd!important; }  /* protein */
+.ct-series-b .ct-slice-pie      { fill: #8dddad!important; }  /* fat */
+.ct-series-c .ct-slice-pie      { fill: #f66d69!important; }  /* net carbs */
+
+.tippy__meal-stats td:last-child {
+	font-weight: 700;
+}
+
+.chart.pie {
+	height: auto!important;
+	width: auto!important;
+}
+
+.chart.pie .pie-legend,
+.chart.pie .pie-legend li {
+	padding: 0!important;
+	margin: 0!important;
+}
+
+.chart.pie .pie-legend li {
+	padding: 2px 0!important;
+}
+
+.chart.pie .pie-legend {
+	position: relative!important;
+	top: auto;
+	right: auto;
+	-webkit-transform: none!important;
+	-ms-transform: none!important;
+	transform: none!important;
+}
+
+.chart.pie .pie-legend li p {
+	font-size: 15px!important;
+	line-height: 15px!important;
+	font-weight: 600!important;
+	font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+	display: table-cell!important;
+}
+
+.chart.pie .pie-legend li i {
+	width: 15px!important;
+	height: 15px!important;
+	top: 0!important;
+}
+
+.tc__cals {
+	color: #fff!important;
+	background: #2FAFBE!important;
+	border-radius: 4px!important;
+	padding: 5px 10px 3px!important;
+	margin-bottom: 10px!important;
+	font-weight: 600!important;
+}
+
+.ct-chart.ct-negative-labels,
+.ct-golden-section>svg {
+	width: 200px!important;
+	height: 200px!important;
+	display: block!important;
+	margin: 0 auto 10px!important;
+}
+
+.ct-negative-labels .ct-label {
+	fill: #fff!important;
+	font-weight: 500!important;
+	font-size: 15px!important;
+}
+
+.ct-golden-section>svg {
+	position: relative!important;
+}
+
+/* Loader
+--------- */
+
+.kmp-results__list {
+	display: none;
+}
+
+@-webkit-keyframes enter {
+	0% {
+		opacity: 0;
+		top: -10px;
+	}
+	5% {
+		opacity: 1;
+		top: 0px;
+	}
+	50.9% {
+		opacity: 1;
+		top: 0px;
+	}
+	55.9% {
+		opacity: 0;
+		top: 10px;
+	}
+}
+@keyframes enter {
+	0% {
+		opacity: 0;
+		top: -10px;
+	}
+	5% {
+		opacity: 1;
+		top: 0px;
+	}
+	50.9% {
+		opacity: 1;
+		top: 0px;
+	}
+	55.9% {
+		opacity: 0;
+		top: 10px;
+	}
+}
+@-moz-keyframes enter {
+	0% {
+		opacity: 0;
+		top: -10px;
+	}
+	5% {
+		opacity: 1;
+		top: 0px;
+	}
+	50.9% {
+		opacity: 1;
+		top: 0px;
+	}
+	55.9% {
+		opacity: 0;
+		top: 10px;
+	}
+}
+
+.kmp-results__loader-wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all .5s ease-in;
+	-o-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.kmp-results-loading .kmp-results__loader-wrap {
+	opacity: 1;
+	visibility: visible;
+}
+
+.kmp-results__loader {
+	position: absolute;
+	left: 50%;
+	top: calc(50% - 25px);
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.kmp-results__loader .square {
+	width: 15px;
+	height: 15px;
+	float: left;
+	top: -10px;
+	margin-right: 5px;
+	margin-top: 5px;
+	position: relative;
+	opacity: 0;
+	-webkit-animation: enter 6s infinite;
+	animation: enter 6s infinite;
+}
+
+.kmp-results__loader .enter {
+	top: 0px;
+	opacity: 1;
+}
+
+.kmp-results__loader .square:nth-child(1) {
+	-webkit-animation-delay: 1.8s;
+	-moz-animation-delay: 1.8s;
+	animation-delay: 1.8s;
+}
+
+.kmp-results__loader .square:nth-child(2) {
+	-webkit-animation-delay: 2.1s;
+	-moz-animation-delay: 2.1s;
+	animation-delay: 2.1s;
+}
+
+.kmp-results__loader .square:nth-child(3) {
+	-webkit-animation-delay: 2.4s;
+	-moz-animation-delay: 2.4s;
+	animation-delay: 2.4s;
+}
+
+.kmp-results__loader .square:nth-child(4) {
+	-webkit-animation-delay: 0.9s;
+	-moz-animation-delay: 0.9s;
+	animation-delay: 0.9s;
+}
+
+.kmp-results__loader .square:nth-child(5) {
+	-webkit-animation-delay: 1.2s;
+	-moz-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+
+.kmp-results__loader .square:nth-child(6) {
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.kmp-results__loader .square:nth-child(8) {
+	-webkit-animation-delay: 0.3s;
+	-moz-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+}
+
+.kmp-results__loader .square:nth-child(9) {
+	-webkit-animation-delay: 0.6s;
+	-moz-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+
+.kmp-results__loader .clear {
+	clear: both;
+}
+
+.kmp-results__loader .last {
+	margin-right: 0;
+}
+
+/* Results page, CARD-UNRELATED
+================================================================================================ */
+
+.kmp-results-header-wrap,
+.kmp-subscribe-cta-wrap {
+	display: none;
+}
+
+.kmp-results-header-wrap > div:first-child {
+	text-align: center;
+}
+
+.kmp-results-header h2 {
+	font-size: 37px;
+	color: #222;
+	text-align: center;
+	font-weight: 900;
+	letter-spacing: -.02em;
+	font-family: Inter, sans-serif;
+	line-height: 1.25;
+	background: rgb(28,231,254);
+	background: -moz-linear-gradient(45deg, rgba(28,231,254,1) 0%, rgba(20,200,224,1) 100%);
+	background: -webkit-linear-gradient(
+45deg, rgba(28,231,254,1) 0%,rgba(20,200,224,1) 100%);
+	background: linear-gradient(
+45deg, rgba(28,231,254,1) 0%,rgba(20,200,224,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1ce7fe', endColorstr='#14c8e0',GradientType=1 );
+	display: inline-block;
+	border-radius: 5px;
+	color: #fff;
+	padding: 10px 20px;
+	text-shadow: rgb(0 0 0 / 10%) 0 3px 3px;
+	margin-bottom: 0;
+}
+
+.kmp-results-header > div {
+	position: relative;
+}
+
+.kmp-button--regenerate {
+	width: 37px;
+	height: 45px;
+	/* background: transparent url('../img/regenerate-icon.png') center center/contain no-repeat; */
+	background: transparent url('../img/regenerate-background.png') center center/contain no-repeat;
+	cursor: pointer;
+	overflow: hidden;
+	position: absolute;
+	right: -50px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	-webkit-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.generateMaxReached .kmp-button--regenerate {
+	filter: grayscale(1);
+	opacity: .5;
+}
+
+.kmp-button--regenerate span {
+	position: absolute;
+	width: 29px;
+	height: 29px;
+	border: none;
+	top: 3px;
+	left: 4px;
+	display: block;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+	background: transparent url(../img/regenerate-icon-v2.png) center center/contain no-repeat;
+}
+
+.regenerating:not(.generateMaxReached) .kmp-button--regenerate span {
+	-webkit-animation-name: spin;
+	animation-name: spin;
+	-webkit-animation-duration: 2500ms;
+	animation-duration: 2500ms;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+}
+
+@keyframes spin {
+	from {
+		transform:rotate(0deg);
+	}
+	to {
+		transform:rotate(360deg);
+	}
+}
+
+.kmp-subscribe-cta-wrap {
+	padding: 0 40px 40px;
+	box-sizing: border-box;
+	width: 100%!important;
+	margin: 73px auto!important;
+	padding: 40px!important;
+	max-width: 970px!important;
+	text-align: center;
+}
+
+.kmp-subscribe-cta {
+	max-width: 726px;
+	width: 100%;
+	margin: auto;
+}
+
+.kmp-subscribe-cta,
+.kmp-subscribe-cta p {
+	color: #222;
+	letter-spacing: .2px;
+	font: normal 300 16.8px/25.6px Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.kmp-subscribe-cta h3 {
+	font-size: 30px;
+	color: #222;
+	font-weight: 900;
+	letter-spacing: -.02em;
+	font-family: Inter, sans-serif;
+	line-height: 1.5;
+	display: inline-block;
+	margin-bottom: 19px!important;
+}
+
+.tippy-header {
+	margin: 10px 20px 6px!important;
+	color: #2FAFBE!important;
+}
+
+.kmp-choices-summary {
+	width: 100%;
+	max-width: 444px;
+	margin: 42px auto 0;
+}
+
+.kmp-choices-summary > * {
+	border-top: #f6f6f6 double 5px;
+}
+
+.main__calTarget {
+	border-right: #f6f6f6 solid 1px;
+}
+
+.choices--main,
+.choices--goal {
+	font-size: 15px;
+	line-height: 18px;
+	font-weight: 700;
+	color: #2FAFBE;
+}
+
+.choices--main > *,
+.choices--goal {
+	padding: 7px 0;
+}
+
+.choices--main > * {
+	-webkit-flex: 0 1 50%;
+	-ms-flex: 0 1 50%;
+	flex: 0 1 50%;
+}
+
+.choices--main span,
+.choices--goal span,
+.choices--sub h4 {
+	font-family: 'Inter';
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 11px;
+	line-height: 15px;
+	color: #aaa;
+}
+
+.choices--main span {
+	margin-right: 5px;
+}
+
+.choices--goal span {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.kmp-flex-item[class*="sub__"] {
+	padding: 13px 7px 10px;
+}
+
+.choices--sub h4 {
+	margin-bottom: 12px;
+}
+
+.kmp-flex-item[class*="sub__"]:not(:last-child) {
+	border-right: #f6f6f6 solid 1px;
+}
+
+.item-number--1 .kmp-flex-item[class*="sub__"] {
+	-webkit-flex: 0 1 100%;
+	-ms-flex: 0 1 100%;
+	flex: 0 1 100%;
+}
+
+.item-number--2 .kmp-flex-item[class*="sub__"] {
+	-webkit-flex: 0 1 50%;
+	-ms-flex: 0 1 50%;
+	flex: 0 1 50%;
+}
+
+.item-number--3 .kmp-flex-item[class*="sub__"] {
+	-webkit-flex: 0 1 33.3333%;
+	-ms-flex: 0 1 33.3333%;
+	flex: 0 1 33.3333%;
+}
+
+.item-number--4 .kmp-flex-item[class*="sub__"] {
+	-webkit-flex: 0 1 25%;
+	-ms-flex: 0 1 25%;
+	flex: 0 1 25%;
+}
+
+.sub__icon-label {
+	color: #2FAFBE;
+	font-size: 12px;
+	line-height: 19px;
+	font-weight: 400;
+}
+
+.sub__icon {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	background-color: transparent;
+}
+
+.advanced.sub__icon { background-image: url('../img/advanced-256.svg'); }
+.beginner.sub__icon { background-image: url('../img/beginner-256.svg'); }
+.carnivore.sub__icon { background-image: url('../img/carnivore-256.svg'); }
+.dairyfree.sub__icon { background-image: url('../img/dairyfree-256.svg'); }
+.dessert.sub__icon { background-image: url('../img/dessert-256.svg'); }
+.egg-free.sub__icon { background-image: url('../img/eggfree-256.svg'); }
+.snack.sub__icon { background-image: url('../img/snack-256.svg'); }
+.vegan.sub__icon { background-image: url('../img/vegan-256.svg'); }
+.vegetarian.sub__icon { background-image: url('../img/vegetarian-256.svg'); }
+
+@media ( max-width: 540px ) {
+	.choices--main {
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.choices--main > * {
+		-webkit-flex: 0 1 100%;
+		-ms-flex: 0 1 100%;
+		flex: 0 1 100%;
+	}
+	.choices--main > .main__calTarget	{ padding-bottom: 0; }
+	.choices--main > .main__mealsNumber { padding-top: 0; }
+}
+
+@media ( max-width: 420px ) {
+	.choices--sub {
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.item-number--1 .kmp-flex-item[class*="sub__"],
+	.item-number--2 .kmp-flex-item[class*="sub__"],
+	.item-number--3 .kmp-flex-item[class*="sub__"],
+	.item-number--4 .kmp-flex-item[class*="sub__"] {
+		-webkit-flex: 0 1 50%;
+		-ms-flex: 0 1 50%;
+		flex: 0 1 50%;
+	}
+	.main__calTarget {
+		border-right: none;
+	}
+}
+
+@media ( max-width: 320px ) {
+	.item-number--1 .kmp-flex-item[class*="sub__"],
+	.item-number--2 .kmp-flex-item[class*="sub__"],
+	.item-number--3 .kmp-flex-item[class*="sub__"],
+	.item-number--4 .kmp-flex-item[class*="sub__"] {
+		-webkit-flex: 0 1 100%;
+		-ms-flex: 0 1 100%;
+		flex: 0 1 100%;
+	}
+	.kmp-flex-item[class*="sub__"]:not(:last-child) {
+		border-right: #f6f6f6 solid 1px;
+	}
+}
+
+/* AJAX error
+================================================================================================ */
+
+.kmp-results-error {
+	margin: 0 40px;
+	padding: 40px;
+	text-align: center;
+	color: #a72608;
+	border: #a72608 solid 1px;
+	border-radius: 10px;
+}
+
+/* TEMP
+================================================================================================ */
+
+#ketogenic-meal-planner form + div {
+	display: none;
+}
+
+/* Fixes & Addons
+================================================================================================ */
+
+/* Put Meal Cards back in order */
+@media screen and (min-width: 641px) {
+	ul.cards-list.kmp-masonry li:nth-child(2n) {
+		left: 0 !important;
+	}
+	ul.cards-list.kmp-masonry li:nth-child(2n + 1) {
+		left: 50% !important;
+	}
+}
